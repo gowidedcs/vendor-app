@@ -1,0 +1,69 @@
+<ion-header>
+
+    <ion-navbar  color="primary">
+        <ion-buttons left>
+            <button ion-button menuToggle color="dark">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+     
+        <ion-title>
+                <h5>
+            GOWIDETECHNOLOGY <br/>
+            9876543210
+            </h5>
+        </ion-title>
+ 
+        <ion-buttons end>
+                <ion-title><marquee  WIDTH=120 HEIGHT=50> <h6 style="color:aqua;">TIMINGS OF THE SHOP ==>> 8:30am-9:30pm.</h6></marquee></ion-title>
+        </ion-buttons>
+       
+    
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+   <!-- <ion-buttons end>
+        <button ion-button icon-only showCancelButton="true" 
+                      (click) ="initializeItems()"
+                      style="background-color:aqua;">
+            <ion-icon name="search"></ion-icon>
+            
+        </button>
+          </ion-buttons>-->
+    
+       
+                
+    <ion-card>
+<button ion-button (click) = "openWritePage()" block>
+<ion-icon><ion-icon name="paper"> Write Your Order.</ion-icon></ion-icon>
+  </button>
+</ion-card>
+
+
+
+  <ion-card>
+    <button ion-button (click) = "openTakeSendPic()" block>
+        <ion-icon><ion-icon name="camera">  Send Order List.</ion-icon></ion-icon>
+          </button>
+    </ion-card>
+
+    
+
+      <ion-card>
+        <button ion-button (click) = "openCallForOrder()" block>
+            <ion-icon><ion-icon name="call">   Call For Order.</ion-icon> </ion-icon>
+          </button>
+        </ion-card>
+
+        
+       
+  
+ </ion-content>
+
+
+
+
