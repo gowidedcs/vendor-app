@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+     Search Your Items
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+  <div *ngIf="items" padding>
+    </div>
+</ion-content>

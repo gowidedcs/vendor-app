@@ -1,18 +1,59 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+
+    <ion-navbar  color="primary">
+        <ion-buttons left>
+            <button ion-button menuToggle color="dark">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+     
+        <ion-title>
+                <h5>
+            GOWIDETECHNOLOGY <br/>
+            9876543210
+            </h5>
+        </ion-title>
+ 
+        <ion-buttons end>
+                <ion-title><marquee  WIDTH=120 HEIGHT=50> <h6 style="color:aqua;">TIMINGS OF THE SHOP ==>> 8:30am-9:30pm.</h6></marquee></ion-title>
+        </ion-buttons>
+       
+    
+    </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+               
+<ion-card>
+    <ion-card-content>
+        <button ion-button (click) = "openWritePage()" block>
+            Write Your Order <ion-icon name="paper"></ion-icon>
+        </button>
+    </ion-card-content>
+</ion-card>
+   
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+<ion-card>
+    <ion-card-content>
+        <button ion-button icon-right (click)="openSendPictureMenu()" block>
+            Send Picture of List <ion-icon name="camera"></ion-icon>
+        </button>
+    </ion-card-content>
+</ion-card>
+
+  <ion-card>
+    <ion-card-content>
+        <button ion-button icon-right (click)="onCallNumber()" block>
+            Call Shop <ion-icon name="call"></ion-icon>
+        </button>
+    </ion-card-content>
+  </ion-card>
+
+ </ion-content>
+
+
+
+
