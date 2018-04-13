@@ -6,13 +6,81 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>offers</ion-title>
-  </ion-navbar>
+  <ion-navbar  color="primary">
+    <ion-buttons left>
+        <button ion-button menuToggle color="dark">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+    
+ 
+    <ion-title>
+        GROCERY
+        9876543210 
+    </ion-title>
+        <marquee style="color:aqua;">SHOPS TIMINGS : 8:30am-9:30pm.</marquee>
+   
 
+</ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
   <marquee style="background-color:aqua;"><h3><ion-icon name="ios-basket"> Todays Offers.</ion-icon></h3></marquee>
+
+<ion-buttons end>
+    <button ion-button (click) = "showAlert()" color="dark"> 
+            <ion-icon name="add">
+            </ion-icon>
+    </button>
+</ion-buttons>
+
+  <ion-card>
+    <ion-card-content>
+            <table>
+                    <tr>
+                            <td>Name : <input type="text"></td>
+                            <br/>
+                            <td>Type : <input type="text"></td>
+                     </tr>
+            </table>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+        <ion-card-content>
+                <table>
+                        <tr>
+                                <td>Units : <input type="text"></td>
+                                <br/>
+                                <td>Price : <input type="number"></td>
+                         </tr>
+                </table>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+            <ion-card-content>
+                    <table>
+                            <tr>
+                                    <td>Offer : <input type="text"></td>
+                                    <br/>
+                                    <td>Price : <input type="text"></td>
+                             </tr>
+                    </table>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+                <ion-card-content>
+                        <table>
+                                <tr>
+                                        <td>offer price is : <input type="number"></td>
+                                        <br/>
+                                        <td>Actual Price is : <input type="number"></td>
+                                 </tr>
+                        </table>
+                </ion-card-content>
+              </ion-card>
+
 </ion-content>

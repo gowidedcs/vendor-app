@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title class="text-center"><ion-icon></ion-icon> {{ 'SIGNUP_TITLE' }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<div class="splash-logo"></div>
+
+  <form (submit)="doSignup()">
+    <ion-list>
+    
+      <!--ion-item >
+        <ion-label stacked>Skill Set (separate with comma)</ion-label>
+        <ion-input type="text" [(ngModel)]="skills" name="skills" placeholder="eg. PHP, Writing, Chef" required="required"></ion-input>
+      </ion-item-->
+      
+     <ion-item>
+        <ion-label stacked>{{ 'EMAIL' }}</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" placeholder="eg. Abc@gmail.com"></ion-input>
+      </ion-item>
+
+      <!--
+      Want to add a Username? Here you go:
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+      -->
+
+      <ion-item>
+        <ion-label floating>{{ 'Password' }}</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+ <!--     
+      <ion-item>
+        <ion-label stacked>Repeat Password</ion-label>
+        <ion-input type="password" [(ngModel)]="repeat-password" name="repeat-password"></ion-input>
+      </ion-item>
+-->
+
+
+      <ion-item>
+        <ion-label floating>First name</ion-label>
+        <ion-input type="text" [(ngModel)]="first_name" name="first_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last name</ion-label>
+        <ion-input type="text" [(ngModel)]="last_name" name="last_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" [(ngModel)]="city" name="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>State/Province</ion-label>
+        <ion-input type="text" [(ngModel)]="state" name="state"></ion-input>
+      </ion-item>
+
+
+      <ion-item >
+        <ion-label stacked>Phone</ion-label>
+        <ion-input type="text" [(ngModel)]="phone" name="phone" placeholder="eg.9876543210" required="required"></ion-input>
+      </ion-item>
+
+
+
+     
+
+      <div padding text-center>
+        <button ion-button color="primary" round>{{ 'SIGNUP_BUTTON' }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

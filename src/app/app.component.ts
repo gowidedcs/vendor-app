@@ -1,11 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Config } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { NavController } from 'ionic-angular';
+//import { ListPage } from '../pages/list/list';
 import { TabsPage } from '../pages/tabs/tabs';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { LoginPage } from '../pages/login/login';
+import * as firebase from 'firebase';
+import { TranslateService } from '@ngx-translate/core';
+import { PaymentPage } from '../pages/payment/payment';
+import { Http } from '@angular/http';
+
 
 
 @Component({
@@ -13,23 +20,65 @@ import { TabsPage } from '../pages/tabs/tabs';
 })
 
 export class MyApp {
+  details: any=[];
   @ViewChild(Nav) nav: Nav;
+  items = this.details;
 
-  rootPage: any = TabsPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    translate: TranslateService, config: Config,
+    public navCtrl: NavController,public http:Http) {
+
+
     this.initializeApp();
+    this.testget();
+ 
+var that =this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        that.rootPage = LoginPage;
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+        that.rootPage = LoginPage;
+      }
+    });
+
+    translate.setDefaultLang('en');
+    translate.use('en')
+
+    translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
+      config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
+    });
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: this.rootPage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: TabsPage },
+      { title: 'About', component: AboutPage},
+      { title: 'Contact', component: ContactPage}
+      //{ title: 'List', component: ListPage }
      
 
     ];
 
+  }
+
+
+  
+  onLoadSale(){
+    this.navCtrl.push(PaymentPage);
+  }
+  testget(){
+    console.log("testget");
+     this.http.get('payment/pay.json').map(res=>res.json()).subscribe(data=>{
+       this.items=data;
+       console.log(data.image);
+     });   
   }
 
   initializeApp() {
@@ -46,4 +95,5 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+  
 }

@@ -18,10 +18,12 @@ export class WritePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
-  popThis(){
+/**
+ *  popThis(){
     this.navCtrl.pop();
-  }
+  } 
+ */
+ 
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad WritePage');
